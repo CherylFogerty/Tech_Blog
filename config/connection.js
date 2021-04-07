@@ -1,10 +1,11 @@
+require('dotenv').config();
 const Sequelize = require('sequelize');
 
-require('dotenv').config();
+
 
 // create connection to our db
-const sequelize = new Sequelize('techblog_db', 'root', 'Whitley#1', {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.DB, process.env.DB_USER, process.env.PASSWORD, {
+    host: process.env.HOST,
     dialect: 'mysql',
     port: 3306
 });
